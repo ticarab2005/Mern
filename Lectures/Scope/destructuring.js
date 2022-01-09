@@ -28,8 +28,8 @@ console.log(personcopy === person2)
 
 // }
 
-// var arrow = (param) => { console.log(param) }
-// arrow('hit the target')
+var arrow = (param) => { console.log(param) }
+arrow('hit the target')
 
 // ternary operator: is a ? follow with a colon. Ternary operator are in 3 parts 
 // 1 part is an condition: some thing that resolves to true or false
