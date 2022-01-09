@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hellooo!</h1>
+    <script>
+        //var, const, let --> 3 ways to declare variables
+
+var name = "Lebron James"
+var numChampionships = 4
+let teammates = ['AD', 'Rondo', 'Westbrook']
+var willLakersWin = false
+
+var name = "Kevin Durant"
+console.log(name)
+
+
+var sayHi = function() {
+    console.log("hi")
+    return "Hi"
+}
+
+function customHello(name) {
+    console.log("hello ", name)
+    console.log("num championship is", numChampionships)
+    var secretword = "wazzaaaaap"
+    return secretword
+}
+
+// console.log(customHello("lebron"))
+
+// customHello("Lebron")
+
+var student1 = {
+    name: "Chris LaMee",
+    numBelts: 2,
+    homeTeam: "Bulls"
+}
+
+// console.log(student1.name)
+
+// sayHi()
+
+// scoping ---> something (variables and functions) can be global if it's not declared inside any function
+
+let player2 = "Steph Curry"
+
+
+function countToNum(num) { //functions make their own scope for variables declared with var
+    let sum = 0
+    for (let i = 0; i < num; i++) {
+        let thing = "this is a thing"
+        sum += i
+        console.log(i)
+    }
+    console.log(sum)
+        //     console.log(' i outside the for loop is:',
+        //         i)
+}
+
+
+//console.log(sum)
+countToNum(10)
+
+// 3 ways to declare variables are: var, let, const
+// all of those above ways to declare variables are globally scoped if they are not inside a function
+// functions create a new scope for "var" declarations --> vars are availiable outside forloops if they are dlclared inside a forloop, lets are not
+// for loop and conditionals create a new scope for 'let' and "const" declarations
+// const is a way to declare a variable that you don't want reassigned to a different value
+
+    </script>
+</body>
+</html>
