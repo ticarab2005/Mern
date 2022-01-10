@@ -146,6 +146,8 @@ function learn() {
 }
 console.log(dojo);
 
+// => dojo = "san jose"
+
 // => function learn(){ 
 //      var dojo;
 //      dojo = "seattle";
@@ -153,7 +155,6 @@ console.log(dojo);
 //      dojo = "burbank";
 //      console.log(dojo);//logs burbank
 // }
-// => dojo = "san jose"
 // => learn();
 // => console.log(dojo);// logs san jose
 
