@@ -1,49 +1,37 @@
-function selectionsort(arr) {
-    // loop through array, fine the largest value, and the index its in, then put it in the correct place
-    // hint: might need a nested for loop
-    for (let i = 0; i < arr.length; i++) {
-        let runner = 0;
-        let min = arr[0];
-        // Run the j in front of the i
-        for (let j = 1; j < arr.length - i; j++) {
+// combine two pre-sorted arrays into one sorted array
+// return the newly combined array
+// bonus challenge: combine in place into leftArr instead of a new array
 
-            // checking if j is < than i
-            // put the greater value to the right and put the less value to the left
-            if (arr[j] > min) {
-                min = arr[j];
-                runner = j;
-            }
+const combine = (leftArr, rightArr) => {
+    newArr = [];
+    var i = 0;
+    var j = 0;
+
+    while (leftArr.length && j < rightArr.length) {
+        if (leftArr[i] < rightArr[j]) {
+            newArr.push(leftArr[i]);
+            i++;
+        } else {
+            newArr.push(rightArr[j]);
+            j++;
         }
-        let temp = arr[runner]; //swap the value
-        arr[runner] = arr[arr.length - 1 - i];
-        arr[arr.length - 1 - i] = temp;
     }
-    console.log(arr);
+    return newArr;
 }
 
-(selectionsort([10, 12, 24, 2, 3, 9, 21]));
 
-function sort(arr) {
-    for (var i = 0; i < arr.length; i++) {
-        // initialize the largest value
-        let bigidx = 0;
-        // index that contains the largest value
-        // let bignum = arr[0];
-        for (let j = 1; j < arr.length - i; j++) {
-            if (arr[j] > arr[bigidx]) {
-                bignum = arr[j];
-                bigidx = j;
-            }
-        }
-        // by the time we get here, the inner forloop has finished and we have located the largest number
-        // let temp = arr[bigidx];
-        // This will give us the last index minus the i
-        // arr[bigidx] = arr[arr.length - 1 - i];
-        // arr[arr.length - 1 - i] = temp;
-        // destructure swap
-        [arr[bigidx], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[bigidx]];
+// should return [0,1,2,3,4,6,7,9,11]
+// console.log(combine([1, 2, 7, 9], [0, 3, 4, 6, 11]));
+// should return [0,1]
+// console.log(combine([1], [0]));
+
+const mergeSort = (arr) => {
+    if (arr.length < 2) {
+        return arr;
     }
-    console.log(arr);
+    const left = arr.slice(0, arr.length / 2);
+    const right = arr.slice(arr.length / 2, arr.length);
+    return combine(mergeSort(left), mergeSort(right));
 }
 
-sort([25, 2, 5, 13, 11, 21, 7]);
+console.log(mergeSort([5, 4, 2, 6, 8, 14, 1, 3, 11]));
