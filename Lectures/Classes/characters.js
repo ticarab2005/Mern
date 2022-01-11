@@ -21,11 +21,15 @@ class Kirby extends Fighter {
 }
 
 class Bayonetta extends Fighter {
-    super("Bayonetta", 6, 4, 7, "look at these glasses", playerNum);
+    constructor(playerNum){
+        super("Bayonetta", 6, 4, 7, "look at these glasses", playerNum);
+    }
 }
 
-special(opponent) {
+special(opponent){
     if (opponent instanceof Fighter) {
+        console.log(`Bayonetta is going to fire her pistol heels at ${opponent.name}!!!!`);
+        for(let )
         opponent.percentage += this.strength * 2;
         console.log(`${this.name} performed a special on ${opponent.name} for ${this.strength *2}%!!!!!`);
     }
@@ -33,4 +37,5 @@ special(opponent) {
 
 const ness = new Fighter("Ness", 5, 6, 3, "ok", 1);
 const kirb = new Kirby(2);
-const dk = new
+const dk = new Fighter("Donkey Kong", 2, 10, 10, "RIDUNNO?!?!", 2);
+const bayo = new Bayonetta(4);
