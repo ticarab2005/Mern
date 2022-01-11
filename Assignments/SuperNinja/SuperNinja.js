@@ -14,21 +14,23 @@ class Ninja {
         return this;
     }
     drinkSake() {
-        console.log(`${this.name} drinks Sake!`);
         this.health += 10;
         return this;
     }
 }
 
 class Sensei extends Ninja {
-    constructor(name, wisdom = 10) {
+    constructor(name) {
         super(name);
-        this.wisdom = wisdom;
+        this.wisdom = 10;
         this.health = 200;
+        this.speed = 10;
+        this.strength = 10;
     }
     speakWisdom() {
-        super.drinkSake();
         console.log(`${this.name} Hit's Ninja with wisdom: What one programmer can do in one month, two programmers can do in two months`);
+        super.drinkSake();
+        return this;
     }
 }
 
