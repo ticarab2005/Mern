@@ -1,11 +1,26 @@
 import React from 'react';
 import './App.css';
-import MyNewComponent from './components/MyNewComponent'
+import PersonCard from './components/PersonCard';
 
 function App() {
   return (
     <div className="App">
-      <MyNewComponent/>
+      <PersonCard 
+        personName = {"Doe, Jane"}
+        age ={45}
+        hairColor = {"Black"} ></PersonCard>
+      <PersonCard 
+        personName = {"Smith, John"}
+        age ={88}
+        hairColor = {"Brown"} ></PersonCard>
+      <PersonCard 
+        personName = {"Fillmore, Millard"}
+        age ={50}
+        hairColor = {"Brown"} ></PersonCard>
+      <PersonCard 
+        personName = {"Smith, Maria"}
+        age ={62}
+        hairColor = {"Brown"} ></PersonCard>
     </div>
   );
 }
