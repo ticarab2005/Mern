@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+}
+
+.pixel{
+  height: 50px;
+  width: 50px;
+  border: 2px solid black;
+  display: inline-block;
+  margin: 2px;
+}
+
+.unfilled{
+  background-color: whitesmoke;
+}
+.filled{
+  background-color: black;
+}
+
+.row {
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+}

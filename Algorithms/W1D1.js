@@ -16,6 +16,9 @@ function bubblesort(arr) {
     console.log(arr);
 }
 
+bubblesort([6, 4, 5, 2, 9, 3, 8]); //output: [2,3,4,5,6,8,9]
+bubblesort([7, 4, 5, 2, 9, 3, 1]); //output: [2,3,4,5,6,8,9]
+
 function selectionsort(arr) {
     // loop through array, fine the largest value, and the index its in, then put it in the correct place
     // hint: might need a nested for loop
@@ -42,5 +45,3 @@ function selectionsort(arr) {
 (selectionsort([10, 12, 24, 2, 3, 9, 21]));
 
 
-bubblesort([6, 4, 5, 2, 9, 3, 8]); //output: [2,3,4,5,6,8,9]
-bubblesort([7, 4, 5, 2, 9, 3, 1]); //output: [2,3,4,5,6,8,9]
