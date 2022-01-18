@@ -11,10 +11,10 @@ const SimpleForm = (props) => {
         dairyFree: false
     });
 
-    const onChangeHandler = (eve) => {
+    const onChangeHandler = (event) => {
         setForm({
             ...form,
-            [eve.target.name]: eve.target.type === "checkbox" ? eve.target.checked: eve.target.value
+            [event.target.name]: event.target.type === "checkbox" ? event.target.checked: event.target.value
         })
     }
 

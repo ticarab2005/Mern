@@ -1,16 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-import React from 'react';
-import List from './components/List';
+import Form from './components/Form';
 
 function App() {
-  
   return (
     <div className="App">
-      <div>
+      <div className="container">
         <h1>To Do List</h1>
-        <List/>
-        </div>
+        <Form/>
+      </div>
     </div>
   );
 }
