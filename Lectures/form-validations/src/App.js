@@ -5,17 +5,16 @@ import SimpleForm from './components/SimpleForm';
 import {useState} from 'react';
 
 function App() {
-    const [words,setWord] = useState("hash browns","home fries","taters wedges","yucca","scalloped potatoes")
+    const [words,setWords] = useState(["hash browns","home fries","taters wedges","yucca","scalloped potatoes"])
       return(
         <div className="App">
       {/* <TraditionalForm/> */}
       {/* <SimpleForm/> */}
       {
         words.map((str) => {
-          return <marquee><h1>{str}are delish!</h1></marquee>
+          return <marquee><h1>{str} are delish!</h1></marquee>
         })
       }
-
     </div>
   );
 }

@@ -30,7 +30,7 @@ const SimpleForm = (props) => {
         return lengthValidator(inputs.flavor)
             && lengthValidator(inputs.sauce)
             && lengthValidator(inputs.fruit)
-            && lengthValidator(inputs.topping)
+            && lengthValidator(inputs.toppings)
     }
 
     return (
@@ -46,19 +46,19 @@ const SimpleForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="sauce">Sauce</label>
                     <input className="form-control" name="sauce" type="text" onChange={onChangeHandler}/>
-                    <span className='alert-danger'>{!lengthValidator(form.flavor) && form.flavor.length > 0 && "you need at least 3 characters!"}</span>
+                    <span className='alert-danger'>{!lengthValidator(form.sauce) && form.sauce.length > 0 && "you need at least 3 characters!"}</span>
                 </div>
                 <br />
                 <div className="form-group">
-                    <label htmlFor="topping">Topping</label>
-                    <input className="form-control" name="topping" type="text" onChange={onChangeHandler}/>
-                    <span className='alert-danger'>{!lengthValidator(form.flavor) && form.flavor.length > 0 && "you need at least 3 characters!"}</span>
+                    <label htmlFor="toppings">Topping</label>
+                    <input className="form-control" name="toppings" type="text" onChange={onChangeHandler}/>
+                    <span className='alert-danger'>{!lengthValidator(form.toppings) && form.toppings.length > 0 && "you need at least 3 characters!"}</span>
                 </div>
                 <br />
                 <div className="form-group">
                     <label htmlFor="fruit">Fruit</label>
                     <input className="form-control" name="fruit" type="text" onChange={onChangeHandler}/>
-                    <span className='alert-danger'>{!lengthValidator(form.flavor) && form.flavor.length > 0 && "you need at least 3 characters!"}</span>
+                    <span className='alert-danger'>{!lengthValidator(form.fruit) && form.fruit.length > 0 && "you need at least 3 characters!"}</span>
                 </div>
                 <br />
                 <div className="form-group">
@@ -71,7 +71,11 @@ const SimpleForm = (props) => {
                     <input className="form-check-input" name="dairy-free" type="checkbox" onChange={onChangeHandler}/>
                 </div>
                 <br />
-                <input type="submit" className="btn btn-lg btn-success" onChange={onChangeHandler}/>
+                {
+                    allValid(form)
+                    ?<input type="submit" className="btn btn-lg btn-success"/>
+                    :<input type="submit" className="btn btn-lg btn-success" disabled/>
+                }
             </form>
         </div>
     )

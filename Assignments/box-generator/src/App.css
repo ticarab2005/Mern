@@ -1,0 +1,21 @@
+*{
+  margin: 0 auto;
+}
+
+.button {
+  margin-top: 40px;
+}
+
+.box{
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  margin: 5px;
+}
+
+.rows {
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
