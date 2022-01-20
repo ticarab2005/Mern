@@ -20,7 +20,10 @@ function App() {
     //   })
     //   .catch(err => console.log(err))
     axios.get("https://api.openbrewerydb.org/breweries?by_city="+city)
-      .then(res => console.log(res.data))
+    then(res => {
+          console.log(res)
+          //set state
+          setBreweries(res);
       .catch(err => console.log(err))
   }
 
