@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <div className='d-flex' id="header">
+      <div className='d-flex justify-content-around' id="header">
         <Link to="/">Main</Link>
         <Link to="/form">Form</Link>
         <Link to="/second/bigpig/hotpink">L A R G E P I G</Link>
@@ -18,6 +18,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          {/*  colons are routing variable(param) */}
           <Route exact path="/second/:word/:color">
             <Second />
           </Route>
