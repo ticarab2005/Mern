@@ -23,7 +23,8 @@ function App() {
     then(res => {
           console.log(res)
           //set state
-          setBreweries(res);
+          setBreweries(res)
+          })
       .catch(err => console.log(err))
   }
 

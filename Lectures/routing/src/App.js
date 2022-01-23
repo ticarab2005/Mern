@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import Home from './views/Home';
 import Second from './views/Second';
 import Form from './views/Form';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 
 function App() {
   return (
