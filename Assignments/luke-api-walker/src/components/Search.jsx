@@ -28,13 +28,6 @@ const Search = (prop) => {
     const onSubmitHandler = (event) => {
         event.preventDefault();
         history.push(`/${form.category}/${form.id}`)
-        console.log("yeahhhhhh I'm clicked!", form)
-
-        axios.get(`https://swapi.dev/api/${form.category}/${form.id}`)
-            .then(res => {
-                console.log(res)
-            })
-            .catch(err => console.log(err))
     }
 
     const onChangeHandler = (event) => {

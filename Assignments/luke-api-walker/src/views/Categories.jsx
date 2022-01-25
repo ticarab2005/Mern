@@ -6,28 +6,28 @@ import axios from "axios";
 const Categories = () => {
     const { id, category } = useParams();
     const [select, setSelect] = useState({});
-    const [dataErr, setDataErr] = useState({});
 
 
     useEffect(() => {
         axios.get(`https://swapi.dev/api/${category}/${id}/`)
             .then(res => {
                 console.log(res);
+                // this is your state
                 setSelect(res.data)
             })
             .catch(err => {
                 console.log(err)
-                setDataErr({ error: `🤖 Beep bop, these aren't the droids you are looking for (╯▔皿▔)╯ 🤖` })
+                setSelect({ error: `🤖 Beep bop, these aren't the droids you are looking for (╯▔皿▔)╯ 🤖` })
             })
-    }, [category, id, dataErr])
+    }, [category, id])
 
     return (
         <div>
             <ul>
                 {
-                    dataErr.error ?
+                    select.error ?
                         <div>
-                            <h1>{dataErr.error}
+                            <h1>{select.error}
                                 <img style={{ height: 750 }} className="rounded float-left pic mt-4" src="https://i.kym-cdn.com/entries/icons/facebook/000/023/967/obiwan.jpg" alt="Obi Wan Kenobi" /></h1>
                         </div>
                         : category === "people" ?
