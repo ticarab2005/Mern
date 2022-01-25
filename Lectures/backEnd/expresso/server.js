@@ -13,10 +13,14 @@ app.get("/api/test/", (req,res)=>{
 })
 
 app.get("/api/order/", (req,res)=>{
+    // const order = {
+    //     // milk, name, expresso shots, size, topping, coffee shop name, type of base
+    //     // baristaName: faker.name.findName(),
+    //     // base:"dark roast",
+    // }
     res.json(new Order());
 })
 
-// you can out the amount of orders here, loop to the array
 app.get("/api/order/:amount", (req,res)=>{
     const orders = [];
     for(let i = 0; i < req.params.amount;i++){
