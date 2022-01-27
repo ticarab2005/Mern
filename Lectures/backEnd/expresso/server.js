@@ -13,6 +13,7 @@ app.get("/api/test/", (req,res)=>{
 })
 
 app.get("/api/order/", (req,res)=>{
+    // you're  creating a new instance
     // const order = {
     //     // milk, name, expresso shots, size, topping, coffee shop name, type of base
     //     // baristaName: faker.name.findName(),

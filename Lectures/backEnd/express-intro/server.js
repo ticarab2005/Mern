@@ -1,4 +1,4 @@
-// this is where we import and initialize 
+//* this is where we import and initialize* 
 const express = require("express");
 // this is an import assigned to a variable
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.json());
 // make sure you do this before adding a post route
 app.use(express.urlencoded({extended:true}));
 
-// the middle is where we will put all our routes
+// *the middle is where we will put all our routes*
 // going to a url in your browser is implicitly just a get request
 // get routes are when it's url was accessed and is expecting to receive some type of respond. 
 // get routes accepts 2 parameters: a string that defines what's the route, and an anonymous function defining what to do when this route is access
@@ -37,7 +37,7 @@ app.get("/api/repeat/:word", (req,res)=>{
 // to make a post request in our browser, we're going to need to write code on our front-end to do that
 // to build our own servers and test them out, we're going to use this software called postman
 app.post("/api/repeat/", (req,res)=>{
-    // req.body is the full javascript object of whatever the client is sent over as information
+    // req.body is the full javascript object of whatever the client is sent over as information. req.body how you take from the post request
     console.log(req.body)
     // make sure you're sending something back that'll let you know it works
     res.json({repeat:req.body});
