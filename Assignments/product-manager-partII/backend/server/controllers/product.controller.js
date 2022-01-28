@@ -17,14 +17,12 @@ module.exports.createProduct = (req, res) => {
 }
 
 module.exports.findOneProduct = (req, res) => {
-    Product.find()
-    .then((randProduct) => {
-        let count = randProduct.length
-        return res.json({
-            results: randProduct[Math.floor(Math.random() * count)],
-        })
-    })
-    .catch(err => res.status(400).json({ message: "ahh ahhhh ahhhh, you didn't say the magic words!", err }))
+    Product.findOne({ _id: req.params._id })
+        // as long as it comes through sucessfully, we have .then. 
+        // It's kind of like axios, except we're making an axios call to the database, and return the result with res.json
+        .then(results => res.json({ results: results }))
+        // whatever the error it might've been, were report back with a status 400 & a json message
+        .catch(err => res.status(400).json({ message: "ahh ahhhh ahhhh, you didn't say the magic words!", err }))
 }
 
 module.exports.deleteProduct = (req,res) =>{
