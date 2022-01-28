@@ -15,6 +15,8 @@ function App() {
     name: ""
   });
 
+  const [loaded, setLoaded] = useState(false)
+
   const onChangeHandler = (event) => {
     setForm({
       ...form,
@@ -36,7 +38,8 @@ function App() {
     axios.post("http://localhost:8000/api/sundaes/create/",form)
       .then(res=>{
         console.log(res);
-        setSundaes([...sundaes,res.data.results])
+        setLoaded(false)
+        // setSundaes([...sundaes,res.data.results])
         // if you're updating or deleting something, if you're redirecting to a different page on submission, history.push is the way to go
           // history.push("/")
       })
@@ -50,9 +53,10 @@ function App() {
         console.log(res.data.results);
         // anytime you're writing something for an api and making some sort of axios call, YOU GOT TO CONSOLE LOG IT!!!
         setSundaes(res.data.results);
+        setLoaded(true)
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [loaded])
   return (
 
     <div className="App">
