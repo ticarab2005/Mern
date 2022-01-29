@@ -46,7 +46,7 @@ const ProductForm = (prop) => {
                 </div>
                 <br />
                 <div>
-                    <label htmlFor="price">Last Name: </label>
+                    <label htmlFor="price">Price: </label>
                     <input className="form-control" type="number" name="price" onChange={onChangeHandler}/>
                 </div>
                 <br />
