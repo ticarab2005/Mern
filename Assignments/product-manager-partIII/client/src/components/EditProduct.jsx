@@ -30,7 +30,6 @@ const EditProduct = (prop) => {
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/products/${_id}`)
-        // axios.get(`http://localhost:8000/api/products/findAll`)
             .then(res => {
                 console.log(res.data.results);
                 setProducts(res.data.results);
