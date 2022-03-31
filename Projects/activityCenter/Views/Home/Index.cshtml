@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model User
+
+<h1 class="text-center jumbotron">Welcome to the Dojo Activity Center</h1>
+
+<div class="d-flex justify-content-around">
+    <form action="/register" method="POST" class="col-4 p-4 border border-dark border-3">
+        <h2 class="display-5 text-center">Register</h2>
+        <br>
+        <div class="mb-3 row">
+            <label for="Name" class="box">Name: </label>
+            <input asp-for="Name" class="form-control" style="Width: 200px;">
+        </div>
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <div class="mb-3 row">
+            <label for="Email" class="flex">Email: </label>
+            <input asp-for="Email" class="form-control" style="Width: 200px;">
+        </div>
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <div class="mb-3 row">
+            <label for="Password" class="align">Password: </label>
+            <input asp-for="Password" class="form-control" style="Width: 200px;">
+        </div>
+        <span asp-validation-for="Password" class="text-danger"></span>
+        <div class="mb-3 row">
+            <label for="Confirm" class="pw">Confirm PW: </label>
+            <input asp-for="Confirm" class="form-control" style="Width: 200px;">
+        </div>
+        <span asp-validation-for="Confirm" class="text-danger"></span>
+        <div class="left d-flex justify-content-around pt-4">
+            <input type="submit" value="Register" class="button mb-5 btn-warning btn-outline-dark space">
+        </div>
+    </form>
+    <div class="col-4 p-2 bd-highlight">
+        <partial name="_Login" />
+    </div>
+</div>

@@ -1,0 +1,59 @@
+@using System.Collections.Generic;
+
+@model List<Participant>
+
+<div class="d-flex justify-content-between">
+    <h1 class="text-primary">
+        <span class="text-success">~</span> Dojo Activity Center<span class="text-success">~</span>
+    </h1>
+    <div class="d-flex align-items-center">
+        <h3 class="px-3">Welcome</h3>
+        <a class="fs-5" asp-action="logout">Logout</a>
+    </div>
+</div>
+<br>
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>Activity</th>
+            <th>Date and Time</th>
+            <th>Duration</th>
+            <th>Event Coordinator</th>
+            <th>No. of Participants</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(Hobby h in ViewBag.allHobbies)
+            {
+                <tr>
+                    <td><a href="/show/@h.HobbyId">@h.HobbyName</a></td>
+                    <td>@h.DateTime</td>
+                    <td>@h.Duration</td>
+                    <td>@h.MyUser.Name</td>
+                    <td>@h.ParticipantAt.Count</td>
+                    <td>
+                        @{
+                            if(h.UserId == ViewBag.LoggedInUser.UserId)
+                            {
+                                <a href="/delete/@h.HobbyId">Delete</a>
+                            } else {
+                                if(h.ParticipantAt.Any(f => f.UserId == ViewBag.LoggedInUser.UserId))
+                                {
+                                <a href="/leave/@h.HobbyId/@ViewBag.LoggedInUser.UserId">Leave</a>
+                                }
+                                else{
+                                    <a href="/join/@h.HobbyId/@ViewBag.LoggedInUser.UserId">Join</a>
+                                }
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div class="d-flex justify-content-end">
+    <a href="new" class="button btn-warning btn-outline-dark">Add New Activity</a>
+</div>

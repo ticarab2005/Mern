@@ -1,0 +1,19 @@
+@model LoginUser
+
+<form action="/login" method="post" class="p-4 border border-dark border-3">
+    <h1 class="display-5 px-5">Login</h1>
+    <br>
+    <div class="mb-3 row">
+        <label for="logEmail" class="flex">Email: </label>
+        <input asp-for="logEmail" class="form-control" style="Width: 200px;" value="jfranco@ups.com">
+    </div>
+        <span asp-validation-for="logEmail" class="text-danger"></span>
+    <div class="mb-3 row">
+        <label for="logPassword" class="align">Password: </label>
+        <input asp-for="logPassword" class="form-control" style="Width: 200px;" value="password">
+    </div>
+    <br>
+    <div class="right d-flex justify-content-around">
+        <input type="submit" value="Login" class="button btn-outline-dark space btn-primary text-center">
+    </div>
+</form>

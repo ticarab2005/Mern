@@ -1,0 +1,58 @@
+<partial name="_Navbar.cshtml" />
+
+@model Hobby
+
+<div class="d-flex justify-content-between">
+    <form action="createHobby" method="POST">
+        <div class="col-6 me-auto p-2 bd-highlight">
+            <h2 class="px-5 text-warning">Create an Activity</h2>
+            <br><br>
+            <div class="mb-3 row">
+                <label class="box">Title</label>
+                <input asp-for="HobbyName" class="form-control" style="Width:200px;">
+            </div>
+            <span asp-validation-for="HobbyName" class="text-danger"></span>
+            <br>
+            <div class="mb-3 row">
+                <label class="box">Date</label>
+                <input asp-for="DateTime" type="datetime-local">
+            </div>
+            <span asp-validation-for="DateTime" class="text-danger"></span>
+            <div class="mb-3 row">
+                    <label class="box">Time</label>
+                @{
+                    foreach(Hobby h in ViewBag.allHobbies)
+                    {
+                    <input asp-for="DateTime" type="text" value="@h.DateTime.Hour">
+                    <input asp-for="DateTime" type="text" value="@h.DateTime.Minute">
+                    <input asp-for="DateTime" type="text" value="@h.DateTime.ToString(" tt").ToLower()">
+                    }
+                }
+            </div>
+            <div class="mb-3 row">
+                <label class="box">Duration</label>
+                <input asp-for="Duration" type="number" class="form-control" style="Width: 200px;">
+                <select asp-for="Duration" class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Hours</option>
+                    <option value="2">Minutes</option>
+                    <option value="3">Days</option>
+                </select>
+                <span asp-validation-for="Duration" class="text-danger"></span>
+                <br>
+            </div>
+            <div class="mb-3 row">
+                <div class="space">
+                    <label for="Description" class="mb-2" for="a_short_description_of_myself">Description</label>
+                    <br>
+                </div>
+                <textarea asp-for="Description" class="box space" style="Width: 1000px; Height: 300px;" type="text"
+                    id="a_short_description_of_myself"></textarea>
+            </div>
+            <span asp-validation-for="Description" class="text-danger"></span>
+            <div class="right">
+                <input type="submit" value="Submit" class="button btn-warning btn-outline-dark space">
+            </div>
+        </div>
+    </form>
+</div>
